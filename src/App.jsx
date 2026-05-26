@@ -18,6 +18,8 @@ import Contact      from './pages/public/Contact';
 import Audit        from './pages/public/Audit';
 import Devis        from './pages/public/Devis';
 import Deplient     from './pages/public/Deplient';
+import NosSocietes  from './pages/public/NosSocietes';
+import NosCompetences from './pages/public/NosCompetences';
 
 // Auth
 import Login    from './pages/auth/Login';
@@ -60,7 +62,9 @@ export default function App() {
             <Route path="/blog"        element={<Blog/>}/>
             <Route path="/experts"     element={<Experts/>}/>
             <Route path="/contact"     element={<Contact/>}/>
-              <Route path="/deplient" element={<Deplient/>}/>
+            <Route path="/nos-societes" element={<NosSocietes/>}/>
+            <Route path="/deplient" element={<Deplient/>}/>
+           <Route path="/nos-competences" element={<NosCompetences />} />
           </Route>
 
           {/* Audit & Devis (avec layout public) */}

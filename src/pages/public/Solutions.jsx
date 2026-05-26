@@ -45,8 +45,8 @@ export default function Solutions() {
                 </span>
               ))}
             </div>
-            <Link to="/devis" className="btn-primary text-base px-8 py-4">
-              Demander un devis combiné <ArrowRight size={16}/>
+            <Link to="/tarifs" className="btn-primary text-base px-8 py-4">
+              Voir Nos Tarifs <ArrowRight size={16}/>
             </Link>
           </motion.div>
         </Container>

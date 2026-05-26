@@ -6,18 +6,19 @@ import { motion, AnimatePresence } from 'framer-motion';
 const NAV_ITEMS = [
   { label: 'Services', to: '/services' },
   { label: 'Solutions', to: '/solutions' },
+  { label: 'Sociétés', to: '/nos-societes' },
+  { label: 'Compétences', to: '/nos-competences' },
   { label: 'Réalisations', to: '/realisations' },
-  { label: 'Tarifs', to: '/tarifs' },
-  { label: 'À propos', to: '/a-propos' },
+  { label: 'About', to: '/a-propos' },
   { label: 'Contact', to: '/contact' },
   { label: 'Blog', to: '/blog' },
 ];
 
 export default function Navbar() {
-  const [open,     setOpen]     = useState(false);
+  const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-  const isHome   = location.pathname === '/';
+  const isHome = location.pathname === '/';
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -37,7 +38,7 @@ export default function Navbar() {
       <div className="hidden md:flex items-center justify-between px-8 py-1.5 bg-brand-500 text-white text-xs font-semibold">
         <span>📍 Ottawa · Kinshasa · Lubumbashi · Kolwezi · Brazzaville · Pointe-Noire · Malabo</span>
         <a href="tel:+16137690296" className="flex items-center gap-1 hover:text-navy-100 transition-colors">
-          <Phone size={11}/> +1 (613) 769-0296
+          <Phone size={11} /> +1 (613) 769-0296
         </a>
       </div>
 
@@ -61,10 +62,9 @@ export default function Navbar() {
               key={item.to}
               to={item.to}
               className={({ isActive }) =>
-                `px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${
-                  isActive
-                    ? 'bg-brand-500 text-white'
-                    : 'text-gray-200 hover:text-white hover:bg-white/10'
+                `px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${isActive
+                  ? 'bg-brand-500 text-white'
+                  : 'text-gray-200 hover:text-white hover:bg-white/10'
                 }`
               }
             >
@@ -80,7 +80,7 @@ export default function Navbar() {
             to="/login"
             className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold text-gray-200 hover:text-white hover:bg-white/10 transition-all duration-200"
           >
-            <User size={15}/>
+            <User size={15} />
             Espace client
           </Link>
 
@@ -97,7 +97,7 @@ export default function Navbar() {
           onClick={() => setOpen(!open)}
           className="lg:hidden p-2 text-white hover:bg-white/10 rounded-lg transition-colors"
         >
-          {open ? <X size={24}/> : <Menu size={24}/>}
+          {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </nav>
 
@@ -116,8 +116,7 @@ export default function Navbar() {
                   key={item.to}
                   to={item.to}
                   className={({ isActive }) =>
-                    `block px-4 py-3 rounded-xl text-sm font-semibold transition-colors ${
-                      isActive ? 'bg-brand-500 text-white' : 'text-gray-300 hover:text-white hover:bg-white/10'
+                    `block px-4 py-3 rounded-xl text-sm font-semibold transition-colors ${isActive ? 'bg-brand-500 text-white' : 'text-gray-300 hover:text-white hover:bg-white/10'
                     }`
                   }
                 >
@@ -131,7 +130,7 @@ export default function Navbar() {
                   to="/login"
                   className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-gray-300 hover:text-white hover:bg-white/10 border border-white/10 transition-colors"
                 >
-                  <User size={15}/>
+                  <User size={15} />
                   Espace client
                 </Link>
 
